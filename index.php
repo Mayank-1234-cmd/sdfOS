@@ -108,20 +108,8 @@ function add($appURL,$appName,$iconURL,$id) {
   echo $a;
 }
 
-add("https://stuff.mkcodes.repl.co","sdfOS","sdfos","sdfos");//
+add("about:blank","blank page","blnkpg","blnkpg");//
 add("https://bing.com","bing","bing","bing");
-add("https://fstest.mkcodes.repl.co","My Files","fstest","fstest");
-add("https://rocky-believed-tarp.glitch.me/index.php","Ace9 IDE","aceide","aceide");
-add("https://rmtrollbox.herokuapp.com","Trollbox [not 100% by me]","tb","tb");
-add("https://turbowarp.org/501394297/embed","[scratch]Wiki","scwiki","scwiki");
-add("https://turbowarp.org/513439678/embed","[scratch]Terminal","scterm","scterm");
-add("https://turbowarp.org/474482166/embed","[scratch]orangeOS","scoos","scoos");
-add("https://turbowarp.org/523960082/embed","[scratch]War sim","scwar","scwar");
-add("https://turbowarp.org/524998794/embed","[scratch]Story engine","scsto","scsto");
-add("https://trollbox.fun/media/d4b19b35ac5c7b8c618509c4066dd948/image.png","sdfRoleplay","sdfrp","sdfrp");
-add("https://3chat-1.mkcodes.repl.co/","3chat","trcht","trcht");
-add("https://zbin.mkcodes.repl.co/","zbin files","zbin","zbin");
-add("https://articles.mkcodes.repl.co/","articles!","artic","artic");
 
 // add("https://youtube.com","Youtube [not by me]","tb","tb");
 ?>
