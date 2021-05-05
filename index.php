@@ -11,7 +11,7 @@ titletwo {
   color:white;
   position: absolute; top: 5px; right: 5px; text-align: right; padding-top:0%;
 }
-button{font-size:12px;}
+  button{font-size:12px;}
 </style><?php
 $abc=$_SERVER['HTTP_X_FORWARDED_FOR'];
 $abc=hash('sha512',$abc);
@@ -93,7 +93,7 @@ function add($appURL,$appName,$iconURL,$id) {
   <f style='color:white;'>[%name%]</f> <a onclick=\"%id%hide()\" style=\"color:white;\"> [x]</a> <focus id='%id%focus'> ‪ ‪</focus>
     <iframe src=\"%url%\" id=\"%id%frame\" style=\"width:100%;height:89%;\"> </iframe>
   <!--is=\"x-frame-bypass\" breaks it-->
-  <br/>
+  
   </div>
   <script>
   $( \"#%id%button \" ).draggable({cancel:false});
@@ -108,10 +108,7 @@ function add($appURL,$appName,$iconURL,$id) {
   echo $a;
 }
 
-add("about:blank","blank page","blnkpg","blnkpg");//
-add("https://bing.com","bing","bing","bing");
-
-// add("https://youtube.com","Youtube [not by me]","tb","tb");
+add("https://about:blank","blank page","blank","blank");
 ?>
 
 <style>*{opacity:90%;}body{opacity:100%;}</style>
