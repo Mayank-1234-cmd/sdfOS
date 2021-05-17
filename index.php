@@ -1,17 +1,21 @@
-<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"><script type="module" src="https://unpkg.com/x-frame-bypass"></script>
 <body onload="addCSS('')">
 <style>
 body {
   background-image: url("https://malwarewatch.org/images/backgrounds/background<?php echo rand(1,20);?>.jpg");
 }
-
+.loadFrame {
+  background-color:black;
+}
 /*"*/
 
 titletwo {
   color:white;
   position: absolute; top: 5px; right: 5px; text-align: right; padding-top:0%;
 }
-  button{font-size:12px;}
+  button{font-size:13.6px;}
 </style><?php
 $abc=$_SERVER['HTTP_X_FORWARDED_FOR'];
 $abc=hash('sha512',$abc);
@@ -39,7 +43,6 @@ updateTime()
 // file_put_contents("xd",file_get_contents("xd")."\n".$_SERVER['HTTP_X_FORWARDED_FOR'])
 ?>
 <?php
-
 function add($appURL,$appName,$iconURL,$id) {
   $a="<script src=\"https:\/\/code.jquery.com/jquery-1.12.4.js\"></script>
   <script src=\"https:\/\/code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
@@ -69,6 +72,7 @@ function add($appURL,$appName,$iconURL,$id) {
       document.getElementById('%id%button').style.backgroundColor = 'transparent';
       }
       %id%z=0
+      %id%x=0
       function %id%so() {
         if (%id%z==0) {
               %id%z=1
@@ -77,21 +81,34 @@ function add($appURL,$appName,$iconURL,$id) {
             %id%z=0
             %id%hide()
           }
+        %id%x=%id%x+1
+        if (%id%x==1) {
+          document.getElementById('%id%frame').src='%url%';
+        }
       }
+   $('#%id%close').click(function(e) {  
+        alert('1');
+    });
+
     document.getElementById(\"%id%button\").style.top = Math.floor((Math.random() * 230) + 1) + \"px\";
     document.getElementById(\"%id%button\").style.left = Math.floor((Math.random() * 200) + 1) + \"px\";
+  $(function(){
   $(\"#%id%frame\").focusin(function() {
     document.getElementById('%id%focus').style.backgroundColor = '#91c4ed';
+  });
   });
   $(\"%id%frame\").focusout(function() {
     document.getElementById('%id%focus').style.backgroundColor = 'transparent';
   });
+  function %id%reload() {
+    document.getElementById('%id%frame').src+=''
+  }
     </script>
     <button type=\"button\" id=\"%id%button\" onclick=\"%id%so()\" style=\"border:1px solid grey;;outline:none;background-color:transparent;color:white;position:fixed;\">%name%</button> 
     <br/>
   <div id=\"%id%draggable\" class=\"ui-widget-content\" style=\"width:50%;height:50%;\">
-  <f style='color:white;'>[%name%]</f> <a onclick=\"%id%hide()\" style=\"color:white;\"> [x]</a> <focus id='%id%focus'> ‪ ‪</focus>
-    <iframe src=\"%url%\" id=\"%id%frame\" style=\"width:100%;height:89%;\"> </iframe>
+  <f style='color:white;'>[%name%]</f> <a onclick=\"%id%hide()\" style=\"color:white;\"> [x]</a> <focus id='%id%focus'> ‪ ‪</focus> <button type='button' style='background-color:transparent;color:white;outline:none;border:none;' id='%id%reload' onclick='%id%reload()' style='color:white;'> [reload] </button>
+    <iframe id=\"%id%frame\" src=\"about:blank\" style=\"width:100%;height:89%;\"> </iframe>
   <!--is=\"x-frame-bypass\" breaks it-->
   
   </div>
@@ -108,7 +125,34 @@ function add($appURL,$appName,$iconURL,$id) {
   echo $a;
 }
 
-add("https://about:blank","blank page","blank","blank");
+add("about:blank","blank page","blank","blank");
 ?>
 
-<style>*{opacity:90%;}body{opacity:100%;}</style>
+<style>*{opacity:90%;}body{opacity:100%;}
+body {
+    border-bottom: 30px solid;
+    margin-bottom: -1px;
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+fd{  vertical-align: bottom;
+}
+</style>
+<!--<fd>hi</fd>
+-->
+
+<style>
+.center{
+  //position fixed
+  bottom:100%;
+}
+</style><div class="btn-toolbar center fixed-bottom" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+<?php
+function addTaskbar($appurl,$appname) {
+  echo '    <button type="button" class="btn btn-secondary"><a href="'.$appurl.'" style="color:white;">'.$appname.'</a></button>';
+}
+addtaskbar("/","update");
+?>
+  </div>
+</div>
